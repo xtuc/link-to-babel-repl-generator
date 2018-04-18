@@ -1,5 +1,6 @@
 {
   "name": "link-to-babel-repl-generator",
+  "description": "Generate links to the Babel REPL",
   "version": "1.0.0",
   "author": "Sven Sauleau",
   "license": "MIT",
