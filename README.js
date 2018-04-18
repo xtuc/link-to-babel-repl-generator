@@ -1,4 +1,4 @@
-const { generate, encodeArray } = require("./index");
+const { generate, encodeArray } = require("link-to-babel-repl-generator");
 
 /**
  * Default
