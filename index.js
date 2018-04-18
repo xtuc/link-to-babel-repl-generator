@@ -12,9 +12,10 @@ function encodeArray(array) {
 const defaults = {
   evaluate: false,
   babili: false,
-  presets: encodeArray([]),
+  presets: encodeArray(["env"]),
   plugins: encodeArray([]),
-  lineWrap: true
+  lineWrap: true,
+  version: "" // latest
 };
 
 function compress(string) {
@@ -24,8 +25,12 @@ function compress(string) {
     .replace(/=+$/, ""); // Remove ending '='
 }
 
-function generate(code, {presets, plugins} = {}) {
-  const config = Object.assign({}, defaults, {
+function generate(code, opts = {}) {
+  if (typeof opts.plugins !== "undefined") {
+    throw new Error("specifying plugins is not supported yet");
+  }
+
+  const config = Object.assign({}, defaults, opts, {
     code_lz: compress(code)
   });
 
@@ -33,7 +38,6 @@ function generate(code, {presets, plugins} = {}) {
 }
 
 module.exports = {
-  generate
+  generate,
+  encodeArray
 };
-
-console.log(generate("function t() {}"));

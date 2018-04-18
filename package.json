@@ -1,4 +1,9 @@
 {
+  "name": "link-to-babel-repl-generator",
+  "version": "1.0.0",
+  "author": "Sven Sauleau",
+  "license": "MIT",
+  "main": "index.js",
   "dependencies": {
     "lz-string": "^1.4.4",
     "query-string": "^6.0.0"
